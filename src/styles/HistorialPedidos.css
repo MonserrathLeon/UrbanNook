@@ -1,0 +1,192 @@
+.historial-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #dae8f7;
+  height: 90vh;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Encabezado fijo y centrado */
+.historial-header {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.historial-header h2 {
+  font-size: 2rem;
+  color: #0d47a1;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+/* Contenedor de pedidos con scroll */
+.pedidos-scroll {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-right: 5px; /* espacio para scrollbar */
+}
+
+/* Tarjeta del pedido */
+.pedido-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pedido-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Encabezado del pedido */
+.pedido-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.pedido-header h3 {
+  font-size: 1.2rem;
+  color: #0d47a1;
+}
+
+.estado {
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+
+.estado-pendiente { background-color: #fff4cc; color: #b38600; }
+.estado-enviado { background-color: #d0e7ff; color: #0d47a1; }
+.estado-entregado { background-color: #d9f2e6; color: #2e7d32; }
+.estado-cancelado { background-color: #ffe1e3; color: #c62828; }
+
+/* Información del pedido */
+.pedido-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.pedido-info p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+/* Productos con scroll horizontal */
+.productos {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.producto-item {
+  min-width: 150px;
+  flex-shrink: 0;
+  background-color: #f9fbff;
+  border-radius: 12px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.producto-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 1px solid #ccc;
+  margin-bottom: 8px;
+}
+
+.producto-detalles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+}
+
+.prod-nombre {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0d47a1;
+}
+
+.prod-desc {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.loading-text {
+  text-align: center;
+  margin-top: 40px;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Scrollbar bonito vertical */
+.pedidos-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pedidos-scroll::-webkit-scrollbar-thumb {
+  background-color: #0d47a1;
+  border-radius: 3px;
+}
+
+.pedidos-scroll::-webkit-scrollbar-track {
+  background-color: #e6f2ff;
+  border-radius: 3px;
+}
+
+/* Footer con botón */
+.historial-footer {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-cerrar {
+  background-color: #ff5252;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-cerrar:hover {
+  background-color: #e04848;
+  transform: translateY(-2px);
+}  

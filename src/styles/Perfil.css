@@ -1,0 +1,355 @@
+/* ========= MODAL PRINCIPAL ========= */
+.perfil-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9000;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; } 
+  to { opacity: 1; }
+}
+
+/* ========= CONTENEDOR ========= */
+.perfil-contenido {
+  position: relative;
+  width: 95%;
+  max-width: 700px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 25px 30px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+  animation: slideUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(25px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ========= BOTÓN VOLVER ========= */
+.volver-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+  background: #e2e8f0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.volver-btn:hover {
+  background: #dbeafe;
+  transform: translateY(-2px);
+}
+
+.volver-btn svg {
+  width: 18px;
+  height: 18px;
+  color: #0d47a1;
+}
+
+/* ========= BOTÓN CERRAR ========= */
+.cerrar-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #1e293b;
+  font-size: 20px;
+  transition: 0.2s ease;
+}
+
+.cerrar-btn:hover {
+  color: #0c4a6e;
+  transform: scale(1.1);
+}
+
+/* ========= HEADER DEL PERFIL ========= */
+.perfil-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.perfil-avatar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  flex-shrink: 0;
+}
+
+.perfil-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #dbeafe;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+.perfil-camara {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  background: #1e40af;
+  color: white;
+  border-radius: 50%;
+  padding: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s ease;
+}
+
+.perfil-camara:hover {
+  background: #1d4ed8;
+}
+
+.perfil-camara input {
+  display: none;
+}
+
+.info-usuario h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #0f172a;
+}
+
+.info-usuario p {
+  margin: 3px 0 0 0;
+  color: #475569;
+  font-size: 0.95rem;
+}
+
+/* ========= BOTONES PRINCIPALES ========= */
+.perfil-botones-grid {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.perfil-botones-grid button {
+  padding: 12px;
+  background: #e2e8f0;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #0f172a;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.perfil-botones-grid button:hover {
+  background: #dbeafe;
+  transform: translateY(-2px);
+}
+
+.btn-eliminar {
+  background: #fee2e2 !important;
+  color: #b91c1c !important;
+}
+
+.btn-eliminar:hover {
+  background: #fecaca !important;
+}
+
+/* ========= INFO PERSONAL ========= */
+.info-section h2 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+  color: #0d47a1;
+}
+
+.info-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.info-item {
+  background: #f8fafc;
+  padding: 12px 14px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.06);
+}
+
+.edit-icon {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.edit-icon:hover {
+  color: #1e40af;
+  transform: scale(1.15);
+}
+
+/* ========= FORM EDICIÓN ========= */
+.form-editar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-editar input {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  transition: border-color 0.2s ease;
+}
+
+.form-editar input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.btn-guardar {
+  background: #1e40af;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.btn-guardar:hover {
+  background: #1d4ed8;
+}
+
+.btn-cancelar {
+  background: #94a3b8;
+  color: white;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cancelar:hover {
+  background: #64748b;
+}
+
+/* ========= DIRECCIONES ========= */
+.lista-direcciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.direccion-card {
+  background: #f1f5f9;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 2px 7px rgba(0,0,0,0.05);
+}
+
+.direccion-acciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.direccion-acciones button {
+  padding: 8px 12px;
+  background: #dbeafe;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.direccion-acciones button:hover {
+  background: #bfdbfe;
+}
+
+.form-direccion {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.form-direccion input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.form-direccion input:focus {
+  border-color: #3b82f6;
+}
+
+.form-direccion .btn-guardar {
+  grid-column: span 2;
+}
+
+/* ========= PEDIDOS Y TITULOS ========= */
+h2 {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* ==================== NOTIFICACIONES BONITAS ==================== */
+.notificacion {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 260px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+  opacity: 0;
+  transform: translateY(-15px);
+  animation: slideNoti 0.35s forwards;
+  z-index: 999999;
+}
+
+@keyframes slideNoti {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.notificacion.success { background: #22c55e; }
+.notificacion.error { background: #ef4444; }
+.notificacion.info { background: #3b82f6; }
+
+.noti-icon {
+  font-size: 20px;
+}

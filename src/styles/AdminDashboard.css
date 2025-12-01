@@ -1,0 +1,213 @@
+/* AdminDashboard.css */
+
+/* Contenedor general */
+.dashboard-container {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f8fd;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/* NAVBAR ADMIN */
+.navbar-admin {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem; /* más alto y ancho para que se vea grande */
+  background-color: #0e263f;
+  color: rgb(243, 240, 240);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 80px; /* altura fija */
+}
+
+.navbar-admin .logo-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-admin .logo-section img {
+  height: 40px;
+  width: 40px;
+  object-fit: contain;
+}
+
+.navbar-admin .logo-section span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.navbar-admin .actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navbar-admin .actions button.logout-btn {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* SUBNAVBAR */
+.subnavbar {
+  display: flex;
+  background-color: #e0f0ff;
+  padding: 0.5rem 3rem;
+  gap: 1rem;
+}
+
+.subnavbar button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.subnavbar button.active {
+  border-bottom: 3px solid #1e90ff;
+}
+
+/* CONTENIDO PRINCIPAL */
+.admin-main {
+  padding: 2rem 3rem;
+}
+
+/* GRID DE USUARIOS Y PRODUCTOS */
+.admin-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.admin-scroll-horizontal {
+  display: flex;
+  overflow-x: auto;
+  gap: 1rem;
+  padding-bottom: 1rem;
+}
+
+.admin-scroll-horizontal::-webkit-scrollbar {
+  height: 8px;
+}
+
+.admin-scroll-horizontal::-webkit-scrollbar-thumb {
+  background: #1976d2;
+  border-radius: 4px;
+}
+
+.admin-scroll-horizontal::-webkit-scrollbar-track {
+  background: #f0f2f5;
+}
+
+/* TARJETAS DE USUARIO / PRODUCTO */
+.admin-card {
+  flex: 0 0 250px;
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.admin-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+.admin-card .info {
+  text-align: center;
+  width: 100%;
+}
+
+.admin-card .info p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* BOTONES DE ACCIÓN */
+.admin-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.admin-actions button {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.btn-edit {
+  background-color: #1e90ff;
+}
+
+.btn-delete {
+  background-color: #ff4d4d;
+}
+
+/* FORMULARIO DE EDICIÓN DE PRODUCTO */
+.admin-form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 350px;
+}
+
+.admin-form input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+}
+
+.admin-form-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.btn-save {
+  background-color: #1e90ff;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  background-color: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,248 @@
+/* src/styles/ListaPreordenes.css */
+
+/* =======================
+   Contenedor de preórdenes
+======================= */
+.vd-preorden-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 15px;
+}
+
+/* =======================
+   Tarjeta individual de preorden
+======================= */
+.vd-preorden-card {
+  display: flex;
+  flex-direction: row;
+  background-color: #f0f7ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 15px;
+  gap: 20px;
+  align-items: flex-start;
+  transition: transform 0.2s;
+}
+
+.vd-preorden-card:hover {
+  transform: translateY(-2px);
+}
+
+/* =======================
+   Imagen del producto
+======================= */
+.vd-preorden-left img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+/* =======================
+   Info de la preorden
+======================= */
+.vd-preorden-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.vd-preorden-right p {
+  margin: 2px 0;
+}
+
+/* =======================
+   Botones de estado
+======================= */
+.vd-preorden-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.vd-preorden-buttons button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.2s;
+  color: white;
+}
+
+/* Colores por estado */
+.btn-pendiente { background-color: #f0ad4e; }
+.btn-aprobada { background-color: #5cb85c; }
+.btn-rechazada { background-color: #d9534f; }
+.btn-enproceso { background-color: #0275d8; }
+.btn-encamino { background-color: #8e44ad; }
+.btn-entregada { background-color: #5bc0de; }
+
+.vd-preorden-buttons button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.vd-preorden-buttons button:hover:not(:disabled) {
+  filter: brightness(0.9);
+}
+
+/* =======================
+   Dirección del cliente
+======================= */
+.direccion {
+  background-color: #e6f0ff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+/* =======================
+   Productos dentro de la preorden
+======================= */
+.productos {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.producto-item {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background-color: white;
+  text-align: center;
+}
+
+.producto-img {
+  width: 100%;
+  height: 200px;   
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.producto-detalles p {
+  margin: 2px 0;
+}
+
+.prod-desc {
+  font-style: italic;
+  color: #555;
+}
+.preordenes-container {
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.preordenes-title {
+  text-align: center;
+  color: #2a3eb1;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.preordenes-empty {
+  text-align: center;
+  margin-top: 30px;
+  color: #555;
+}
+
+.preordenes-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.preorden-card {
+  display: flex;
+  background: #f0f4ff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
+}
+
+.preorden-card:hover {
+  transform: translateY(-3px);
+}
+
+.preorden-left {
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preorden-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.preorden-center {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.preorden-producto {
+  margin: 0;
+  font-size: 20px;
+  color: #1f2d78;
+}
+
+.preorden-detalle {
+  font-size: 14px;
+  color: #555;
+  margin: 4px 0;
+}
+
+.preorden-cantidad,
+.preorden-total {
+  font-weight: bold;
+  color: #333;
+  margin: 2px 0;
+}
+
+.preorden-right {
+  flex: 0 0 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.preorden-estado {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+  text-transform: uppercase;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+/* Colores según estado */
+.estado-pendiente { background: #f0ad4e; }
+.estado-aceptado { background: #5cb85c; }
+.estado-en\ proceso { background: #5bc0de; }
+.estado-en\ camino { background: #337ab7; }
+.estado-entregado { background: #8bd8ff; }
+.estado-rechazado { background: #d9534f; }
+
+.preorden-vendedor {
+  font-size: 12px;
+  color: #777;
+  text-align: right;
+}

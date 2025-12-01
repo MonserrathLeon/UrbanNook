@@ -1,0 +1,1115 @@
+.menu-container {
+  font-family: "Poppins", sans-serif;
+  background-color: #f4f5f7;
+  color: #222;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ================== Navbar superior ================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 12px 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.logo {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: rotate(-5deg) scale(1.05);
+}
+.brand-name {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #0d3b66;
+}
+
+.nav-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  border-radius: 30px;
+  background-color: #f0f0f0;
+  padding: 5px 15px;
+  width: 380px;
+  max-width: 80%;
+  transition: all 0.3s ease;
+}
+.search-bar:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px 12px;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* ================== Navbar derecha ================== */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.notificaciones-container,
+.carrito-container,
+.search-bar svg,
+.profile svg {
+  color: #222;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.notificaciones-container:hover,
+.carrito-container:hover,
+.profile:hover svg {
+  transform: scale(1.08);
+  background-color: #e8f0fe;
+  border-radius: 50%;
+}
+
+.carrito-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff6b6b;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 3px 6px;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.user-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0d3b66;
+  transition: all 0.3s ease;
+}
+.user-icon:hover {
+  transform: scale(1.08);
+}
+.usuario-nombre {
+  font-weight: 600;
+  color: #0d3b66;
+  margin-left: 4px;
+}
+
+.logout-btn {
+  background: #ff6b6b;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.logout-btn:hover {
+  background: #e04e4e;
+  transform: scale(1.08);
+}
+
+/* ================== Subnav ================== */
+
+
+/* ================== Sección Productos ================== */
+.productos-section {
+  flex: 1;
+  overflow-y: auto;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f5f7;
+}
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+/* Tarjetas Urbanas */
+.producto-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 18px;
+  position: relative;
+}
+.producto-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+}
+.img-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  position: relative;
+}
+.producto-img {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+.img-container:hover .producto-img {
+  transform: scale(1.08);
+}
+
+/* Wishlist Icon */
+.wishlist-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  background: rgba(0,0,0,0.3);
+  padding: 6px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.wishlist-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Producto info */
+.producto-nombre {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin: 10px 0 5px;
+  color: #0d3b66;
+  text-align: center;
+}
+.producto-precio {
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 5px;
+}
+.producto-categoria {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* Estrellas */
+.estrellas {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 8px;
+}
+
+/* Botones */
+.producto-botones {
+  display: flex;
+  gap: 10px;
+  margin-top: auto;
+}
+.producto-botones button {
+  padding: 10px 16px;
+  border-radius: 15px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.producto-botones button:first-child {
+  background-color: #0d3b66;
+  color: white;
+}
+.producto-botones button:first-child:hover {
+  background-color: #07406a;
+  transform: scale(1.08);
+}
+.producto-botones button:last-child {
+  background-color: #27ae60;
+  color: white;
+}
+.producto-botones button:last-child:hover {
+  background-color: #1e8449;
+  transform: scale(1.08);
+}
+.no-productos {
+  text-align: center;
+  color: #555;
+  font-size: 1.3rem;
+  margin-top: 50px;
+}
+
+/* ================== Producto Ventana ================== */
+.producto-ventana {
+  padding: 25px 30px;
+  width: 100%;
+}
+.producto-detalle {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.producto-imagen img {
+  width: 420px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+  transition: transform 0.3s ease;
+}
+.producto-imagen img:hover {
+  transform: scale(1.05);
+}
+.producto-info {
+  flex: 1;
+  min-width: 280px;
+}
+.cantidad-section input {
+  width: 65px;
+  padding: 7px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+.modal-carrito-btn {
+  background-color: #27ae60;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 18px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.modal-carrito-btn:hover {
+  background-color: #1e8449;
+  transform: scale(1.08);
+}
+.volver-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 18px;
+  color: #0d3b66;
+}
+.volver-btn:hover {
+  text-decoration: underline;
+}
+
+/* ================== Modales ================== */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+}
+.modal-content {
+  background-color: #fefefe;
+  padding: 35px 40px;
+  border-radius: 22px;
+  width: 95%;
+  max-width: 1000px;
+  box-shadow: 0 14px 36px rgba(0,0,0,0.25);
+  animation: fadeInScale 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@keyframes fadeInScale {
+  from {opacity:0; transform: scale(0.9);}
+  to {opacity:1; transform: scale(1);}
+}
+.modal-content h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+  color: #0d3b66;
+  text-align: center;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 10px;
+}
+
+/* ========== Scroll personalizado ========= */
+.productos-section::-webkit-scrollbar {
+  width: 12px;
+}
+.productos-section::-webkit-scrollbar-track {
+  background: #e0e0e0;
+  border-radius: 10px;
+}
+.productos-section::-webkit-scrollbar-thumb {
+  background: #0d3b66;
+  border-radius: 10px;
+}
+.productos-section::-webkit-scrollbar-thumb:hover {
+  background: #07406a;
+}  
+/* ================== Usuario del producto ================== */
+.producto-usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.avatar-usuario {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0d3b66;
+  transition: all 0.3s ease;
+}
+
+.avatar-usuario:hover {
+  transform: scale(1.08);
+}
+
+.nombre-usuario {
+  font-weight: 600;
+  color: #0d3b66;
+  transition: all 0.3s ease;
+}
+
+.nombre-usuario:hover {
+  text-decoration: underline;
+}
+
+/* ================== Formulario preorden ================== */
+.preorden-form {
+  margin-top: 20px;
+  padding: 18px 20px;
+  border-radius: 18px;
+  background-color: #f4f5f7;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.preorden-form h3 {
+  font-size: 1.3rem;
+  color: #0d3b66;
+  margin: 0 0 10px 0;
+}
+
+.preorden-form label {
+  font-weight: 500;
+  color: #222;
+}
+
+.preorden-form input,
+.preorden-form select,
+.preorden-form textarea {
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+}
+
+.preorden-form input:focus,
+.preorden-form select:focus,
+.preorden-form textarea:focus {
+  border-color: #0d3b66;
+}
+
+.preorden-form button {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.preorden-form button:hover {
+  background-color: #1e8449;
+  transform: scale(1.05);
+}
+
+/* ================== Otros productos dentro de ventana ================== */
+.otros-productos {
+  margin-top: 25px;
+}
+
+.productos-grid-mini {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.producto-card-mini {
+  min-width: 160px;
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.producto-card-mini img {
+  width: 100%;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-bottom: 6px;
+}
+
+.producto-card-mini p {
+  font-weight: 500;
+  color: #0d3b66;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.producto-card-mini:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+}
+/* ================== Botón Personalizado ================== */
+.personalizado-btn {
+  background-color: #0d3b66;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 15px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.personalizado-btn:hover {
+  background-color: #07406a;
+  transform: scale(1.05);
+}
+
+/* ================== Formulario Personalizado ================== */
+.personalizado-form {
+  margin-top: 12px;
+  padding: 15px 18px;
+  border-radius: 15px;
+  background-color: #f4f5f7;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.personalizado-form h4 {
+  font-size: 1.2rem;
+  color: #0d3b66;
+  margin: 0 0 6px 0;
+}
+
+.personalizado-form label {
+  font-weight: 500;
+  color: #222;
+}
+
+.personalizado-form input,
+.personalizado-form textarea,
+.personalizado-form select {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  outline: none;
+}
+
+.personalizado-form input:focus,
+.personalizado-form textarea:focus,
+.personalizado-form select:focus {
+  border-color: #0d3b66;
+}
+
+.personalizado-form button {
+  background-color: #27ae60;
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.personalizado-form button:hover {
+  background-color: #1e8449;
+  transform: scale(1.05);
+}
+.productos-grid.scrollable {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.productos-grid.scrollable::-webkit-scrollbar {
+  height: 8px;
+}
+
+.productos-grid.scrollable::-webkit-scrollbar-thumb {
+  background-color: #0d3b66;
+  border-radius: 4px;
+}
+/* ================== Modal Pedido Personalizado ================== */
+.modal-personalizado {
+  background-color: #ffffff;
+  border-radius: 22px;
+  padding: 30px 35px;
+  max-width: 600px;
+  width: 95%;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeInScale 0.35s ease;
+  position: relative;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+.modal-personalizado h3 {
+  color: #0d3b66;
+  text-align: center;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #27ae60;
+  padding-bottom: 8px;
+}
+
+.modal-personalizado textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+  resize: vertical;
+}
+
+.modal-personalizado textarea:focus {
+  border-color: #0d3b66;
+}
+
+.modal-personalizado button {
+  background-color: #27ae60;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-end;
+}
+
+.modal-personalizado button:hover {
+  background-color: #1e8449;
+  transform: scale(1.05);
+}
+
+/* ================== Scroll en ventana producto ================== */
+.producto-ventana {
+  padding: 25px 30px;
+  width: 100%;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px);
+}
+
+/* ================== Perfil vendedor ================== */
+.vendedor-info {
+  background-color: #f4f5f7;
+  padding: 12px 16px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  margin-top: 15px;
+}
+
+/* Avatar vendedor */
+.vendedor-info img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #0d3b66;
+  object-fit: cover;
+}
+
+/* Botón personalizado */
+.personalizado-btn {
+  background-color: #0d3b66;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 15px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.personalizado-btn:hover {
+  background-color: #07406a;
+  transform: scale(1.05);
+}
+
+/* ================== Scroll para grids horizontales ================== */
+.productos-grid.scrollable {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 12px;
+}
+
+.productos-grid.scrollable::-webkit-scrollbar {
+  height: 8px;
+}
+
+.productos-grid.scrollable::-webkit-scrollbar-thumb {
+  background-color: #0d3b66;
+  border-radius: 4px;
+}
+
+/* ================== Ajuste general para overflow ================== */
+.menu-container,
+.modal-overlay {
+  overflow-y: auto;
+}
+
+/* ================== Botón cerrar modal personalizado ================== */
+.modal-personalizado .cerrar-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #222;
+  transition: all 0.3s ease;
+}
+
+.modal-personalizado .cerrar-btn:hover {
+  color: #ff6b6b;
+  transform: scale(1.1);
+}
+/* ================== Historial de pedidos UrbanNook ================== */
+
+/* Contenedor general */
+.historial-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #2c3e50;
+}
+
+/* Título */
+.historial-container h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Lista de tarjetas con scroll vertical */
+.historial-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 70vh; /* altura máxima para scroll vertical */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+
+/* Scrollbar vertical personalizada */
+.historial-list::-webkit-scrollbar {
+  width: 8px;
+}
+.historial-list::-webkit-scrollbar-thumb {
+  background-color: #2d9cdb;
+  border-radius: 4px;
+}
+.historial-list::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Tarjeta individual */
+.historial-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  min-height: 250px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.historial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.18);
+}
+
+/* Header de cada pedido */
+.historial-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #2c3e50;
+}
+
+/* Productos dentro del pedido: fila horizontal con scroll */
+.historial-productos {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar horizontal */
+.historial-productos::-webkit-scrollbar {
+  height: 6px;
+}
+.historial-productos::-webkit-scrollbar-thumb {
+  background-color: #2d9cdb;
+  border-radius: 4px;
+}
+.historial-productos::-webkit-scrollbar-track {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+}
+
+/* Cada producto */
+.historial-producto-item {
+  flex: 0 0 auto; /* No se encoge en el scroll horizontal */
+  width: 120px;   /* ancho fijo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f5f8fd;
+  padding: 10px;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  text-align: center;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.historial-producto-item:hover {
+  transform: translateY(-2px);
+  background-color: #e0ebf5;
+}
+
+/* Imagen del producto */
+.historial-producto-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+/* Nombre y cantidad */
+.historial-producto-info .nombre {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.historial-producto-info small {
+  color: #666;
+  font-size: 0.8rem;
+}
+
+/* Estado del pedido */
+.estado {
+  font-weight: bold;
+  color: #2d9cdb;
+  font-size: 0.95rem;
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* Botón de cerrar */
+.btn-cerrar {
+  margin-top: 20px;
+  background-color: #2d9cdb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: block;
+  width: 220px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-cerrar:hover {
+  background-color: #1b7fc1;
+  transform: translateY(-2px);
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+  .historial-card {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .historial-producto-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .historial-producto-item {
+    width: 100px; /* más pequeño en móvil */
+  }
+}
+/* ---------------- Product detail layout (UrbanNook) ---------------- */
+.producto-detalle--grid {
+  display: grid;
+  grid-template-columns: 380px 380px 1fr;
+  gap: 28px;
+  align-items: start;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* IZQUIERDA */
+.producto-imagen-large img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(13,59,102,0.12);
+}
+.vendedor-email {
+  margin-top: 12px;
+  background: #f4f6fb;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: #0d3b66;
+  text-align: center;
+}
+
+/* CENTRO (reseñas) */
+.producto-col.centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.producto-reseñas {
+  width: 100%;
+  background: transparent;
+  border-radius: 10px;
+}
+.estrellas-interactivas {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+}
+.star-btn svg {
+  border-radius: 6px;
+}
+.comentario-input {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  resize: vertical;
+  font-size: 0.95rem;
+}
+.btn-enviar-review {
+  background: #0d3b66;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.btn-enviar-review:hover { transform: translateY(-2px); }
+
+/* Lista comentarios */
+.lista-reseñas { width: 100%; margin-top: 12px; }
+.comentario-item { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; }
+.comentario-item strong { color: #0d3b66; display: block; margin-bottom: 6px; }
+.sin-reseñas { color: #666; font-style: italic; }
+
+/* DERECHA */
+.producto-col.derecha { display:flex; flex-direction:column; gap:12px; }
+.detalle-nombre { font-size: 1.6rem; font-weight: 700; margin: 0; color: #0d3b66; }
+.detalle-precio { font-size: 2rem; font-weight: 900; color: #0d63ff; margin: 6px 0; }
+.detalle-categoria { font-size: 0.95rem; color: #555; margin-bottom: 8px; }
+.detalle-descripcion { color: #333; line-height: 1.5; }
+
+/* acciones (cantidad + botones) */
+.cantidad-personalizado { display: flex; gap: 14px; align-items: center; margin-top: 8px; }
+.cantidad { display:flex; flex-direction:column; gap:6px; }
+.cantidad input { width: 90px; padding: 8px; border-radius: 8px; border: 1px solid #ccc; }
+
+/* botones */
+.btns-derecha { display:flex; align-items:center; gap:10px; margin-left: 8px; }
+.personalizado-btn { background: #0d3b66; color: #fff; border-radius: 10px; padding: 10px 14px; border: none; cursor:pointer; font-weight:600; }
+.modal-carrito-btn { background: #27ae60; color: #fff; border-radius: 10px; padding: 10px 14px; border: none; cursor:pointer; font-weight:600; }
+
+/* responsive: pasa a columna en pantallas pequeñas */
+@media (max-width: 1150px) {
+  .producto-detalle--grid { grid-template-columns: 1fr; }
+  .producto-col.izquierda, .producto-col.centro, .producto-col.derecha { width: 100%; }
+  .producto-col.centro { order: 3; }
+}
+
+/* ajustes visuales extra */
+.producto-reseñas h4, .lista-reseñas h4 { margin: 8px 0; color: #0d3b66; font-size: 1rem; }
+.comentario-input:focus, .cantidad input:focus { outline: none; box-shadow: 0 0 10px rgba(13,59,102,0.08); border-color: #0d3b66; }  
+.producto-detalle--grid {
+  display: grid;
+  grid-template-columns: 350px 1fr 1fr; 
+  gap: 20px;
+  align-items: start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Columna izquierda: Imagen */
+.producto-imagen {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Columna del centro: Info */
+.producto-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Columna derecha: Estrellas + Comentarios */
+.producto-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Subnavbar general */
+.subnav {
+  background: #041b31;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center; /* Centra todo horizontalmente */
+  align-items: center;
+  position: sticky;
+  top: 82px;
+  z-index: 999;
+}
+
+/* Lista de items */
+.subnav-list {
+  display: flex;
+  gap: 25px; /* espacio entre items */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+/* Item individual */
+.subnav-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px 15px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.subnav-item:hover,
+.subnav-item.activo {
+  background-color: #0d3b66;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Dropdown de categorías */
+.categoria-select {
+  margin-left: 6px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 500;
+}

@@ -1,0 +1,62 @@
+.notificacion {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 260px;
+  max-width: 380px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.2);
+  animation: slideIn .3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.noti-ok,
+.noti-success,
+.noti-ok {
+  background: linear-gradient(45deg, #0be881, #05c46b);
+}
+
+.noti-error {
+  background: linear-gradient(45deg, #ff3f34, #ff5e57);
+}
+
+.noti-info {
+  background: linear-gradient(45deg, #0fbcf9, #4bcffa);
+}
+
+.noti-icon {
+  display: flex;
+  align-items: center;
+}
+
+.noti-text {
+  flex: 1;
+  font-weight: 600;
+}
+
+.noti-close {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.9);
+  cursor: pointer;
+  font-size: 18px;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📦 Donde aparecen */
+.notis-container {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 999999;
+}

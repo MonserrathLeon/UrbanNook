@@ -1,0 +1,474 @@
+/* ===================== GENERAL ===================== */
+.vendedor-dashboard {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f0f4f8 0%, #e8eff5 100%);
+  color: #333;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===================== NAVBAR ===================== */
+.vd-navbar {
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #e0e4e8;
+  border-radius: 0 0 15px 15px;
+}
+
+.vd-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.vd-logo {
+  height: 45px;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.vd-logo:hover {
+  transform: scale(1.05);
+}
+
+.vd-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon-btn {
+  background: #f0f4f8;
+  border: none;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  font-size: 1.2rem;
+  transition: 0.3s ease;
+}
+
+.icon-btn:hover {
+  background: #1976d2;
+  color: #fff;
+  transform: scale(1.15);
+}
+
+.vd-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #f43f5e;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.vd-profile-inline {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  background: #f0f4f8;
+  padding: 6px 12px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.vd-profile-inline:hover {
+  background: #1976d2;
+  color: #fff;
+}
+
+.vd-profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #1976d2;
+}
+
+/* ===================== PERFIL ===================== */
+.vd-perfil {
+  display: flex;
+  align-items: center;
+  padding: 25px 40px;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  margin: 20px 50px;
+  gap: 30px;
+  flex-wrap: nowrap;
+}
+
+.vd-perfil-left {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+/* ===================== AVATAR Y CAMARA ===================== */
+.vd-avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.vd-avatar img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #1976d2;
+  transition: transform 0.3s ease;
+}
+
+.vd-avatar img:hover {
+  transform: scale(1.05);
+}
+
+.vd-camera {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 32px;
+  height: 32px;
+  background: #1976d2;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.vd-camera:hover {
+  background: #125da2;
+  transform: scale(1.1);
+}
+
+.vd-camera input[type="file"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.vd-datos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.vd-datos h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+.vd-datos small {
+  color: #555;
+  font-style: italic;
+}
+
+/* ===================== BOTONES DE SECCIÓN ===================== */
+.vd-buttons-container {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  margin-bottom: 25px;
+  background: #ffffffaa;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.vd-buttons-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.vd-buttons-row button {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #1976d2;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.1), -6px -6px 15px rgba(255,255,255,0.7);
+}
+
+.vd-buttons-row button:hover {
+  background: linear-gradient(135deg, #1976d2, #63a4ff);
+  color: #fff;
+  transform: translateY(-5px) scale(1.06);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+.vd-buttons-row button.activo {
+  background: #1976d2;
+  color: #fff;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+}
+
+/* ===================== SECCIONES ===================== */
+.vd-main {
+  flex: 1;
+  padding: 40px 60px;
+}
+
+.vd-section h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #1976d2;
+  border-left: 5px solid #1976d2;
+  padding-left: 12px;
+}
+
+/* ===================== PRODUCTOS ===================== */
+.vd-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.vd-product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.vd-product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.vd-product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.vd-p-info {
+  padding: 16px 18px;
+}
+
+.vd-p-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.vd-p-desc {
+  font-size: 14px;
+  color: #555;
+  margin: 8px 0;
+  min-height: 40px;
+}
+
+.vd-p-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 18px;
+}
+
+.btn-edit {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-edit:hover {
+  background: #125da2;
+  transform: translateY(-2px);
+}
+
+.btn-delete {
+  background: #f43f5e;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-delete:hover {
+  background: #d93636;
+  transform: translateY(-2px);
+}
+
+/* ===================== FORMULARIO EN DOS COLUMNAS ===================== */
+.vd-form {
+  background: #ffffff;
+  padding: 30px 35px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  max-width: 950px;
+  margin: auto;
+}
+
+.vd-form-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.vd-form-left,
+.vd-form-right {
+  flex: 1 1 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.vd-form-left label,
+.vd-form-right label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #222;
+}
+
+.vd-form-left input,
+.vd-form-right input,
+.vd-form-left textarea,
+.vd-form-right textarea,
+.vd-form-right select {
+  margin-top: 8px;
+  padding: 12px 14px;
+  border: 1.5px solid #ccc;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.25s ease;
+}
+
+.vd-form-left input:focus,
+.vd-form-right input:focus,
+.vd-form-left textarea:focus,
+.vd-form-right textarea:focus,
+.vd-form-right select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 10px rgba(25,118,210,0.2);
+}
+
+.vd-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.btn-save {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn-save:hover {
+  background: #125da2;
+  transform: translateY(-2px);
+}
+
+.btn-cancel {
+  background: #f0f0f0;
+  color: #333;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.btn-cancel:hover {
+  background: #ddd;
+  transform: translateY(-2px);
+}
+
+/* ===================== LISTAS DE PEDIDOS / PREORDENES ===================== */
+.vd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.vd-order-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.vd-order-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.vd-order-actions select {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1.5px solid #ccc;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 1000px) {
+  .vd-form-grid {
+    flex-direction: column;
+  }
+  .vd-main {
+    padding: 20px 30px;
+  }
+  .vd-perfil {
+    margin: 15px 20px;
+    padding: 20px;
+  }
+}

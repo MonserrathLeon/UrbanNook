@@ -1,0 +1,135 @@
+.form-producto {
+  background: #ffffff;
+  padding: 35px 40px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  max-width: 900px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  font-family: 'Inter', sans-serif;
+}
+
+.form-producto h3 {
+  color: #1976d2;
+  font-size: 26px;
+  font-weight: 600;
+  border-left: 6px solid #1976d2;
+  padding-left: 12px;
+  margin-bottom: 0;
+}
+
+.form-producto-grid {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* COLUMNAS */
+.form-left,
+.form-right {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* INPUTS Y SELECTS */
+.form-left label,
+.form-right label {
+  font-weight: 500;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-left input,
+.form-right input,
+.form-left textarea,
+.form-right textarea,
+.form-right select {
+  margin-top: 8px;
+  padding: 14px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 12px;
+  font-size: 15px;
+  background: #f9faff;
+  transition: all 0.25s ease;
+}
+
+.form-left input:focus,
+.form-right input:focus,
+.form-left textarea:focus,
+.form-right textarea:focus,
+.form-right select:focus {
+  outline: none;
+  border-color: #1976d2;
+  box-shadow: 0 0 12px rgba(25,118,210,0.25);
+  background: #fff;
+}
+
+/* TEXTAREA */
+textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+/* FILE INPUT */
+input[type="file"] {
+  padding: 10px;
+  border-radius: 12px;
+  border: 1.5px dashed #ccc;
+  background: #f9faff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+input[type="file"]:hover {
+  border-color: #1976d2;
+  box-shadow: 0 0 10px rgba(25,118,210,0.15);
+}
+
+/* BOTONES */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+}
+
+.form-buttons button {
+  padding: 12px 26px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.form-buttons button:first-child {
+  background: linear-gradient(135deg, #1976d2, #63a4ff);
+  color: #fff;
+}
+
+.form-buttons button:first-child:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 6px 6px 16px rgba(0,0,0,0.15);
+}
+
+.form-buttons button:last-child {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.form-buttons button:last-child:hover {
+  background: #ddd;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .form-producto-grid {
+    flex-direction: column;
+  }
+}
